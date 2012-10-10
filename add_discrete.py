@@ -1,4 +1,4 @@
-#/usr/bin/python
+#!/usr/bin/python
 #import urllib
 import sys
 import re
@@ -24,7 +24,7 @@ def yesno():
 Cap_String='#\n# %s\n#\nDEF ~%s C 0 10 N Y 1 F N\nF0 "C" 50 100 50 H V L CNN\nF1 "%s" 100 -200 50 H I L CNN\nF4 "%s" 500 -300 60 H I C CNN "PN"\nF5 "%s" -125 50 39 H V R BNN "Val"\nF6 "%s" -125 -100 39 H V R BNN "Package"\nF7 "%s" -125 0 39 H V R BNN "Tol"\nF8 "%s" -125 -50 39 H V R BNN "Voltage"\n$FPLIST\n SM%s\n$ENDFPLIST\nDRAW\nP 2 0 1 20  -100 -30  100 -30 N\nP 2 0 1 20  -100 30  100 30 N\nX ~ 1 0 200 170 D 40 40 1 1 P\nX ~ 2 0 -200 170 U 40 40 1 1 P\nENDDRAW\nENDDEF'
 
 # Long_name Long_name Long_name PN Val Package Tol power Package
-Res_String='#\n# %s\n#\nDEF ~%s R 0 0 N Y 1 F N\nF0 "R" 105 0 50 V V C CNN\nF1 "%s" -525 150 50 H I C CNN\nF4 "%s-ND" -620 225 60 H I C CNN "PN"\nF5 "%s" -70 50 39 H V R BNN "Val"\nF6 "%s" -70 -100 39 H V R BNN "Package"\nF7 "%s" -70 0 39 H V R BNN "Tol"\nF8 "%s" -70 -50 39 H V R BNN "Power"\n$FPLIST\n SM%s\n$ENDFPLIST\nDRAW\nP 10 0 1 0  0 200  0 150  50 125  -50 75  50 25  -50 -25  50 -75  -50 -125  0 -150  0 -200 N\nX ~ 1 0 250 50 D 60 60 1 1 P\nX ~ 2 0 -250 50 U 60 60 1 1 P\nENDDRAW\nENDDEF'
+Res_String='#\n# %s\n#\nDEF ~%s R 0 0 N Y 1 F N\nF0 "R" 105 0 50 V V C CNN\nF1 "%s" -525 150 50 H I C CNN\nF4 "%s" -620 225 60 H I C CNN "PN"\nF5 "%s" -70 50 39 H V R BNN "Val"\nF6 "%s" -70 -100 39 H V R BNN "Package"\nF7 "%s" -70 0 39 H V R BNN "Tol"\nF8 "%s" -70 -50 39 H V R BNN "Power"\n$FPLIST\n SM%s\n$ENDFPLIST\nDRAW\nP 10 0 1 0  0 200  0 150  50 125  -50 75  50 25  -50 -25  50 -75  -50 -125  0 -150  0 -200 N\nX ~ 1 0 250 50 D 60 60 1 1 P\nX ~ 2 0 -250 50 U 60 60 1 1 P\nENDDRAW\nENDDEF'
 
 # Long_name Long_name Long_name PN color package package
 LED_String='#\n# %s\n#\nDEF ~%s D 0 40 Y N 1 F N\nF0 "D" 0 100 50 H V C CNN\nF1 "%s" 0 200 50 H I C CNN\nF4 "%s" -350 250 61 H I L BNN "PN"\nF5 "%s" -200 -150 39 H V L BNN "Val"\nF6 "%s" -200 -100 39 H V L BNN "Package"\n$FPLIST\n LED-%s\n$ENDFPLIST\nDRAW\nP 2 0 1 0  50 50  50 -50 N\nP 3 0 1 0  -50 50  50 0  -50 -50 F\nP 3 0 1 0  65 -40  110 -80  105 -55 N\nP 3 0 1 0  80 -25  125 -65  120 -40 N\nX A 1 -200 0 150 R 40 40 1 1 P\nX K 2 200 0 150 L 40 40 1 1 P\nENDDRAW\nENDDEF'
@@ -64,7 +64,7 @@ elif 'res' in sys.argv[1].lower():
 	tolerance_p =tolerance.replace('%','p')
 	power_v=power.replace('/','v')
 	longname = 'res_%s_%s_%s_%s'%(value_p.lower(), tolerance_p, power_v.lower(), package)
-	new_sym = Cap_String%(longname,longname,longname,digikey_pn,value,package,tolerance,power.upper(), package)
+	new_sym = Res_String%(longname,longname,longname,digikey_pn,value,package,tolerance,power.upper(), package)
 
 elif 'led' in sys.argv[1].lower():
 	print "Inputting LED"
