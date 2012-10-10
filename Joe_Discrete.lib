@@ -138,13 +138,34 @@ X K 2 200 0 150 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
-# led_green_0805
+# led_blue_0805
 #
-DEF ~led_green_0805 D 0 40 Y N 1 F N
+DEF ~led_blue_0805 D 0 40 Y N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "led_green_0805" 0 200 50 H I C CNN
+F1 "led_blue_0805" 0 200 50 H I C CNN
+F4 "160-1579-1-ND" -350 250 61 H I L BNN "PN"
+F5 "Blue" -200 -150 39 H V L BNN "Val"
+F6 "0805" -200 -100 39 H V L BNN "Package"
+$FPLIST
+ LED-0805
+$ENDFPLIST
+DRAW
+P 2 0 1 0  50 50  50 -50 N
+P 3 0 1 0  -50 50  50 0  -50 -50 F
+P 3 0 1 0  65 -40  110 -80  105 -55 N
+P 3 0 1 0  80 -25  125 -65  120 -40 N
+X A 1 -200 0 150 R 40 40 1 1 P
+X K 2 200 0 150 L 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# led_green_diff_0805
+#
+DEF ~led_green_diff_0805 D 0 40 Y N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "led_green_diff_0805" 0 200 50 H I C CNN
 F4 "475-1410-1-ND" -350 250 61 H I L BNN "PN"
-F5 "Green" -200 -150 39 H V L BNN "Val"
+F5 "Green_diff" -200 -150 39 H V L BNN "Val"
 F6 "0805" -200 -100 39 H V L BNN "Package"
 $FPLIST
  LED-0805
@@ -179,6 +200,48 @@ P 5 0 1 8  50 30  50 -30  0 0  50 30  50 30 N
 X D D 100 200 100 D 40 40 1 1 P
 X G G -200 0 150 R 40 40 1 1 I
 X S S 100 -200 100 U 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# led_red_diff_0805
+#
+DEF ~led_red_diff_0805 D 0 40 Y N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "led_red_diff_0805" 0 200 50 H I C CNN
+F4 "475-1278-1-ND" -350 250 61 H I L BNN "PN"
+F5 "Red_diff" -200 -150 39 H V L BNN "Val"
+F6 "0805" -200 -100 39 H V L BNN "Package"
+$FPLIST
+ LED-0805
+$ENDFPLIST
+DRAW
+P 2 0 1 0  50 50  50 -50 N
+P 3 0 1 0  -50 50  50 0  -50 -50 F
+P 3 0 1 0  65 -40  110 -80  105 -55 N
+P 3 0 1 0  80 -25  125 -65  120 -40 N
+X A 1 -200 0 150 R 40 40 1 1 P
+X K 2 200 0 150 L 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# led_yellow_0805
+#
+DEF ~led_yellow_0805 D 0 40 Y N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "led_yellow_0805" 0 200 50 H I C CNN
+F4 "754-1135-1-ND" -350 250 61 H I L BNN "PN"
+F5 "Yellow" -200 -150 39 H V L BNN "Val"
+F6 "0805" -200 -100 39 H V L BNN "Package"
+$FPLIST
+ LED-0805
+$ENDFPLIST
+DRAW
+P 2 0 1 0  50 50  50 -50 N
+P 3 0 1 0  -50 50  50 0  -50 -50 F
+P 3 0 1 0  65 -40  110 -80  105 -55 N
+P 3 0 1 0  80 -25  125 -65  120 -40 N
+X A 1 -200 0 150 R 40 40 1 1 P
+X K 2 200 0 150 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
