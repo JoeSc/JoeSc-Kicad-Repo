@@ -29,6 +29,13 @@ Res_String='#\n# %s\n#\nDEF ~%s R 0 0 N Y 1 F N\nF0 "R" 105 0 50 V V C CNN\nF1 "
 # Long_name Long_name Long_name PN color package package
 LED_String='#\n# %s\n#\nDEF ~%s D 0 40 Y N 1 F N\nF0 "D" 0 100 50 H V C CNN\nF1 "%s" 0 200 50 H I C CNN\nF4 "%s" -350 250 61 H I L BNN "PN"\nF5 "%s" -200 -150 39 H V L BNN "Val"\nF6 "%s" -200 -100 39 H V L BNN "Package"\n$FPLIST\n LED-%s\n$ENDFPLIST\nDRAW\nP 2 0 1 0  50 50  50 -50 N\nP 3 0 1 0  -50 50  50 0  -50 -50 F\nP 3 0 1 0  65 -40  110 -80  105 -55 N\nP 3 0 1 0  80 -25  125 -65  120 -40 N\nX A 1 -200 0 150 R 40 40 1 1 P\nX K 2 200 0 150 L 40 40 1 1 P\nENDDRAW\nENDDEF'
 
+# Long_name Long_name Long_name PN package Short_name package
+Diode_String='#\n# %s\n#\nDEF ~%s D 0 40 N N 1 F N\nF0 "D" 0 100 40 H V C CNN\nF1 "%s" 100 300 40 H I C CNN\nF4 "%s" 100 200 60 H I C CNN "PN"\nF5 "%s" -150 -100 39 H V L BNN "Package"\nF6 "%s" -150 -150 39 H V L BNN "Name"\n$FPLIST\n %s\n$ENDFPLIST\nDRAW\nP 2 0 1 6  50 50  50 -50 N\nP 3 0 1 0  -50 50  50 0  -50 -50 F\nX A 1 -200 0 150 R 40 40 1 1 P\nX K 2 200 0 150 L 40 40 1 1 P\nENDDRAW\nENDDEF'
+
+
+
+
+
 
 if 'cap' in sys.argv[1].lower():
 	print "Inputting CAP"
@@ -78,6 +85,18 @@ elif 'led' in sys.argv[1].lower():
 	longname = 'led_%s_%s'%(color.lower(), package)
 	new_sym = LED_String%(longname,longname,longname,digikey_pn,color.lower().capitalize(),package, package)
 
+elif 'diode' in sys.argv[1].lower():
+	print "Inputting Diode"
+	while True:
+		digikey_pn = raw_input("Digi-key Part Number: ")
+		name = raw_input("Name [1N914]: ")
+		package = raw_input("Package Size [SMA]: ")
+		print "Was the above entered correctly? (y/n)",
+		if yesno():
+			break
+	longname = 'diode_%s_%s'%(name.lower(), package.lower())
+	new_sym = Diode_String%(longname,longname,longname,digikey_pn,package,name, package)
+# Long_name Long_name Long_name PN package Short_name package
 
 
 # put it in a lib define by argv[2]
