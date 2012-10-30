@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Thu 25 Oct 2012 07:45:31 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Tue 30 Oct 2012 11:30:28 AM CDT
 #encoding utf-8
 #
 # ic_ft232rl_ssop28
@@ -6,8 +6,8 @@ EESchema-LIBRARY Version 2.3  Date: Thu 25 Oct 2012 07:45:31 PM CDT
 DEF ~ic_ft232rl_ssop28 U 0 40 Y Y 1 F N
 F0 "U" -600 -1000 60 H V L BNN
 F1 "ic_ft232rl_ssop28" 0 -1000 60 H I L BNN
-F4 "FT232RL" -600 1050 60 H V L BNN "Name"
-F5 "768-1007-1-ND" -400 -800 60 H I C CNN "PN"
+F4 "768-1007-1-ND" -400 -800 60 H I C CNN "PN"
+F5 "FT232RL" -400 -800 60 H V C CNN "Name"
 $FPLIST
  SSOP28
 $ENDFPLIST
